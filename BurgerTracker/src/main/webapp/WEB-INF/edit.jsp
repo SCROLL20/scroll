@@ -10,30 +10,8 @@
 <title>Burger Tracker</title>
 </head>
 <body style="margin:10vw;">
-<h1>Burger Tracker</h1>
-<table class="table table-striped table-bordered">
-	<thead>
-		<tr>
-			<th>Burger Name</th>
-			<th>Restaurant Name</th>
-			<th>Rating (out of 5)</th>
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		
-			<tr>
-				<td>< value="${burger.name}"/></td>
-				<td>< value="${burger.restaurant}"/></td>
-				<td>< value="${burger.rating}"/></td>
-				<td><a href="/edit/${burger.id }">edit</a></td>
-			</tr>
-		
-	</tbody>
-</table>
-<br>
-<h2>Add new burger</h2>
-<form:form action="/addBurger" mode="post" modelAttribute="burger">
+<h2>Edit Burger</h2>
+<form:form action="/edit/${burger.id}" mode="put" modelAttribute="burger">
 	<div>
 		<form:label path="name">Burger Name:</form:label><br>
 		<form:errors path="name" class="text-danger"/>
