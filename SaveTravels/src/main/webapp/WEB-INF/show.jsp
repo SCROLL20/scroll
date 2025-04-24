@@ -31,7 +31,9 @@
 		<tr>
 			<td>Amount Spent:</td>
 			<td style="padding-left: 24px;">$<fmt:formatNumber type="number" minFractionDigits="2" value="${expense.amount}"/></td>
-		</tr>	
+
+	
+			
     </tbody>
 </table>
 	
