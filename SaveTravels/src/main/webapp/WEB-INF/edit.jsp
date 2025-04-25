@@ -6,47 +6,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<title>Edit Expense</title>
+<meta charset="UTF-8">
+<title>Edit Expenses</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body style="margin: 10vw;">
-<h1>Edit Expense</h1><a href="/expenses/">Go back</a>
-<br>
-<div>
-<h1>Expense</h1>
-<form:form action="/expenses/edit/${expense.id}" method="post" modelAttribute="expense">
-	<div>
-		<form:label path="name">Expense Name: </form:label><br />
-		<form:errors path="name" class="text-danger"/>
-		<form:input style="width:250px;" path="name"/>
-	</div>
-
-	<div>
-		<form:label path="vendor">Vendor: </form:label><br />
-		<form:errors path="vendor" class="text-danger"/>
-		<form:input style="width:250px;" path="vendor"/>
-	</div>
-	
-	<div>
-		<form:label path="amount">Amount: </form:label><br />
-		<form:errors path="amount" class="text-danger"/>
-		<form:input style="width:250px;" type="number" step="0.01" min="0" path="amount"/>
-	</div>
-	
-	<div>
-		<form:label path="description">Description: </form:label><br />
-		<form:errors path="description" class="text-danger"/>
-		<form:textarea style="width:250px;" rows="3" path="description"/>
-	</div>
-	
-	<div>
-		<input type="submit" value="Submit"/>
-	</div>
-	
-	
-
-</form:form>
+<body>
+<div class="container">
+<h1 class="my-4 text-success">Edit Expense</h1><a href="/">Go back</a>
+    <form:form action="/edit/${travel.id}" method="put" modelAttribute="travel" class="mb-4">
+        <form:errors path="*" Class="alert alert-danger" element="div"/>
+        <div class="mb-3">
+            <form:label path="name" Class="form-label">Expense:</form:label>
+            <form:input path="name" Class="form-control" />
+            <form:errors path="name" Class="text-danger"/>
+        </div>
+        <div class="mb-3">
+            <form:label path="vendor" Class="form-label">Vendor:</form:label>
+            <form:input path="vendor" Class="form-control" />
+            <form:errors path="vendor" Class="text-danger"/>
+        </div>
+        <div class="mb-3">
+            <form:label path="amount" Class="form-label">Amount:</form:label>
+            <form:input path="amount" Class="form-control" />
+            <form:errors path="amount" Class="text-danger"/>
+        </div>
+        <div class="mb-3">
+            <form:label path="description" Class="form-label">Description:</form:label>
+            <form:textarea path="description" Class="form-control" rows="3" />
+            <form:errors path="description" Class="text-danger"/>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form:form>
 </div>
-
 </body>
 </html>
